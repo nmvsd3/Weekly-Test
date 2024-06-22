@@ -1,0 +1,47 @@
+package test;
+
+
+
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class SecondLargestInArray {
+    public static int SecondLargest(int[] arr) {
+        
+        if (arr.length < 2) {
+            return 0; 
+        }
+
+        
+        Arrays.sort(arr);
+
+        
+        return arr[arr.length - 2];
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+      
+        System.out.print("Enter number of elements: ");
+        int n = scanner.nextInt();
+
+       
+        int[] arr = new int[n];
+
+      
+        System.out.println("Enter the elements:");
+        for (int i = 0; i < n; i++) {
+            arr[i] = scanner.nextInt();
+        }
+
+       
+        scanner.close();
+
+  
+        int result = SecondLargest(arr);
+
+      
+        System.out.println("Second largest number: " + result);
+    }
+}
